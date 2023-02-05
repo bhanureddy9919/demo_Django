@@ -1,0 +1,79 @@
+{% extends 'base.html'%}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+  {% block content %}
+  <div class="container">
+    <div class="row">
+      <div class='col-md-6 col-md-offset-3'>
+        <div class="well well-sm">
+          <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <fieldset>
+              <legend class="text-center">Contact us</legend>
+              <!-- Name input -->
+              <div class="form-group">
+                <label class="col-md-3 control-label" for='name'>Title</label>
+                  <div class="col-md-9">
+                <input id="name" name="title" type="text" placeholder="title">
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for='email'>Author</label>
+                <div class="col-md-9">
+              <input id="email" name="author" type="text" placeholder=" author">
+            </div>
+          </div>
+          <br>
+          <br>
+          <!-- Message -->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for='message'>Message</label>
+              <div class="col-md-9">
+            <textarea class="form-control" id="message" name="description" type="text" placeholder="Your message"></textarea>
+            <br>
+            <label>Upload your problem picture</label>
+            <input type="file" name="image" required>
+          </div>
+        </div>
+
+        <!-- Form action -->
+        <div class="form-group">
+          <div class="col-md-12 text-right">
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+{% endblock content %}
+
+
+<h1>Hi I'm {{name}} SureName is {{surename}}</h1>
+
+<p>Click the button below to display the hidden content from the template element.</p>
+
+<button onclick="showContent()">Show hidden content</button>
+
+<template>
+  <h2>Flower</h2>
+  <img src="img_white_flower.jpg" width="214" height="204">
+</template>
+
+<script>
+function showContent() {
+  var temp = document.getElementsByTagName("template")[0];
+  var clon = temp.content.cloneNode(true);
+  document.body.appendChild(clon);
+}
+</script>
+
+</body>
+</html>
+

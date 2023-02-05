@@ -1,0 +1,9 @@
+# model.py
+here we write fields like video fields audio fields
+python manage.py migrate
+python manage.py createsuperuser
+
+userName:- bhanureddy
+Email:- optional
+password:- bhanu123@ 
+re-enter pwd:- bhanu123@
